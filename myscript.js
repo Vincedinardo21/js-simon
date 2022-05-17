@@ -1,16 +1,19 @@
 // Visualizzo 5 numeri casuali
 let numeriRandom = createRandomArray();
-let mioNumero = getMyNumber();
+let randText = document.querySelector(".rand-num");
 console.log(numeriRandom);
+randText.innerHTML = numeriRandom;
+
+setTimeout(getMyNumber, 5000);
+let mioNumero = getMyNumber();
 console.log(mioNumero);
 
 for(let i = 0; i < 5; i++){
-    let numeriIndovinati = numeriRandom.includes(mioNumero[i])
+    let numeriIndovinati = numeriRandom.includes(mioNumero[i]);
     if(numeriIndovinati){
         console.log("Ci sono numeri uguali: " + mioNumero[i]);
     }
 }
-
 
 // Le mie funzioni
 // Funzione che mi restituisce un array con componenti randomiche
@@ -32,4 +35,6 @@ function getMyNumber(){
     }
     return myArr;
 }
+
+
 
